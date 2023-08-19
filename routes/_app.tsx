@@ -1,4 +1,5 @@
 import { AppProps } from "$fresh/server.ts";
+import { BasicLayout, Footer, Header } from "@atomic/design";
 
 export default function App({ Component }: AppProps) {
   return (
@@ -9,7 +10,9 @@ export default function App({ Component }: AppProps) {
         <title>quipit-io</title>
       </head>
       <body>
-        <Component />
+        <BasicLayout header={<Header />} footer={<Footer />}>
+          <Component />
+        </BasicLayout>
       </body>
     </html>
   );
