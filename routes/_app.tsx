@@ -55,6 +55,7 @@ export default async function App(req: Request, { Component }: AppProps) {
             />
           }
           footer={<Footer />}
+          class="bg-slate-700"
         >
           <Component />
         </BasicLayout>
