@@ -1,6 +1,6 @@
 import { JSX } from "preact";
 import { useEffect, useState } from "preact/hooks";
-import { ActionStyleTypes, FeedCard } from "@atomic/design";
+import { Action, ActionStyleTypes, FeedCard } from "@atomic/design";
 import {
   DiscussionIcon,
   LikedIcon,
@@ -59,10 +59,8 @@ export default function Feed(props: PageProps<Take[]>): JSX.Element {
   ];
 
   return (
-    <div className="max-w-screen-md mx-auto">
-      <h1 className="text-4xl font-bold mt-8">Feed</h1>
-
-      <div className="mt-4">
+    <div class="max-w-screen-md mx-auto flex flex-col">
+      <div class="mt-4">
         {data.map((item, index) => (
           <FeedCard
             key={index}
@@ -70,16 +68,20 @@ export default function Feed(props: PageProps<Take[]>): JSX.Element {
             avatar={item.avatar}
             timestamp={item.timestamp}
             actions={actions}
+            class="m-4 md:m-8"
           >
             {item.content}
           </FeedCard>
         ))}
       </div>
 
-      <div className="mt-4">
-        <a href="#load-more" className="text-blue-500">
+      <div class="mt-4">
+        <Action
+          href="#load-more"
+          class="text-blue-500 m-4 md:m-8 mt-0 text-center"
+        >
           Load More
-        </a>
+        </Action>
       </div>
     </div>
   );
