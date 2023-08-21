@@ -34,6 +34,10 @@ export default function Feed(): JSX.Element {
     ...actionStyles,
     href: "#like",
     children: <LikedIcon {...iconStyles} />,
+  }, {
+    ...actionStyles,
+    href: "#load-more",
+    children: "Load More",
   }];
 
   return (
@@ -41,14 +45,17 @@ export default function Feed(): JSX.Element {
       <h1 className="text-4xl font-bold mt-8">Feed</h1>
 
       <div className="mt-4">
-        <FeedCard
-          username="John Doe"
-          avatar="https://github.com/mcgear.png"
-          timestamp="2 hours ago"
-          actions={actions}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </FeedCard>
+        {[...Array(10)].map((_, index) => (
+          <FeedCard
+            key={index}
+            username="John Doe"
+            avatar="https://github.com/mcgear.png"
+            timestamp="2 hours ago"
+            actions={actions}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </FeedCard>
+        ))}
       </div>
     </div>
   );
