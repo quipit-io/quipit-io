@@ -1,21 +1,55 @@
-import { JSX } from "../../src.deps.ts";
-import { Action } from "@atomic/design";
+import { JSX } from "preact";
 import { FeedCard } from "@atomic/design";
+import { ActionStyleTypes } from "https://deno.land/x/fathym_atomic@v0.0.41-integration/mod.ts";
+import {
+  DiscussionIcon,
+  LikedIcon,
+  QuipIcon,
+  VoteIcon,
+} from "$fathym/atomic-icons";
 
 export default function Feed(): JSX.Element {
+  const actionStyles = {
+    actionStyle: ActionStyleTypes.None,
+    class: "flex-grow",
+  };
+
+  const iconStyles = {
+    class: "w-[24px] h-[24px] mx-auto",
+  };
+
+  const actions = [{
+    ...actionStyles,
+    href: "#quip",
+    children: <QuipIcon {...iconStyles} />,
+  }, {
+    ...actionStyles,
+    href: "#vote",
+    children: <VoteIcon {...iconStyles} />,
+  }, {
+    ...actionStyles,
+    href: "#discuss",
+    children: <DiscussionIcon {...iconStyles} />,
+  }, {
+    ...actionStyles,
+    href: "#like",
+    children: <LikedIcon {...iconStyles} />,
+  }];
+
   return (
     <div className="max-w-screen-md mx-auto">
       <h1 className="text-4xl font-bold mt-8">Feed</h1>
+
       <div className="mt-4">
         <FeedCard
           username="John Doe"
-          avatar="https://example.com/avatar.jpg"
+          avatar="https://github.com/mcgear.png"
           timestamp="2 hours ago"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        />
+          actions={actions}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </FeedCard>
       </div>
     </div>
   );
 }
-
-export default Feed;

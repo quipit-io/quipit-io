@@ -24,8 +24,9 @@
     ]
   },
   "imports": {
-    "@atomic/design": "https://deno.land/x/quipit_atomic@v0.0.1-integration8/mod.ts",
-    "@fathym/atomic-icons": "https://deno.land/x/fathym_atomic_icons@v0.0.3-integration8/mod.ts",
+    "_@atomic/design": "https://deno.land/x/quipit_atomic@v0.0.1-integration8/mod.ts",
+    "@atomic/design": "../quipit-atomic/mod.ts",
+    "@fathym/atomic-icons": "https://deno.land/x/fathym_atomic_icons@v0.0.3-integration18/mod.ts",
     "@fathym/atomic-iot": "https://deno.land/x/fathym_atomic_iot@v0.0.21-integration/mod.ts",
     "$fresh/": "https://deno.land/x/fresh@1.4.2/",
     "@kv_oauth": "https://deno.land/x/deno_kv_oauth@v0.2.7/mod.ts",
