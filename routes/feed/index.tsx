@@ -56,11 +56,6 @@ export default function Feed(props: PageProps<Take[]>): JSX.Element {
       href: "#like",
       children: <LikedIcon {...iconStyles} />,
     },
-    {
-      ...actionStyles,
-      href: "#load-more",
-      children: "Load More",
-    },
   ];
 
   return (
@@ -79,6 +74,12 @@ export default function Feed(props: PageProps<Take[]>): JSX.Element {
             {item.content}
           </FeedCard>
         ))}
+      </div>
+
+      <div className="mt-4">
+        <a href="#load-more" className="text-blue-500">
+          Load More
+        </a>
       </div>
     </div>
   );
