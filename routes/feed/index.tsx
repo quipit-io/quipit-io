@@ -1,9 +1,15 @@
-import { JSX, useEffect, useState } from "preact";
-import { FeedCard, ActionStyleTypes } from "@atomic/design";
-import { DiscussionIcon, LikedIcon, QuipIcon, VoteIcon } from "$fathym/atomic-icons";
+import { JSX } from "preact";
+import { useEffect, useState } from "preact/hooks";
+import { ActionStyleTypes, FeedCard } from "@atomic/design";
+import {
+  DiscussionIcon,
+  LikedIcon,
+  QuipIcon,
+  VoteIcon,
+} from "$fathym/atomic-icons";
 
 export default function Feed(): JSX.Element {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<unknown[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {

@@ -1,3 +1,5 @@
+import { HandlerContext } from "$fresh/server.ts";
+
 const EXAMPLE_DATA = [
   {
     username: "John Doe",
@@ -10,6 +12,6 @@ const EXAMPLE_DATA = [
   // ...
 ];
 
-export const handler = (_req: Request): Response => {
+export const handler = (_req: Request, _ctx: HandlerContext): Response => {
   return new Response(JSON.stringify(EXAMPLE_DATA));
 };
