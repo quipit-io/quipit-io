@@ -1,4 +1,5 @@
-import { Take } from './takes.interface';
+import { Handlers } from "$fresh/server.ts";
+import { Take } from "../../src/takes.interface.ts";
 
 const EXAMPLE_DATA: Take[] = [
   {
@@ -6,10 +7,14 @@ const EXAMPLE_DATA: Take[] = [
     avatar: "https://github.com/mcgear.png",
     timestamp: "2 hours ago",
     userId: "1",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   // Add the remaining 10 examples here
   // ...
 ];
 
-// Rest of the file content remains the same
+export const handler: Handlers<Take[]> = {
+  async GET(_req, ctx) {
+    return new Response(JSON.stringify(EXAMPLE_DATA));
+  },
+};
