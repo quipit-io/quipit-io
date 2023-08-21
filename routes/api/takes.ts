@@ -1,15 +1,15 @@
-const EXAMPLE_DATA = [
+import { Take } from './takes.interface';
+
+const EXAMPLE_DATA: Take[] = [
   {
     username: "John Doe",
     avatar: "https://github.com/mcgear.png",
     timestamp: "2 hours ago",
     userId: "1",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   },
   // Add the remaining 10 examples here
   // ...
 ];
 
-export const handler = (_req: Request): Response => {
-  return new Response(JSON.stringify(EXAMPLE_DATA));
-};
+// Rest of the file content remains the same
