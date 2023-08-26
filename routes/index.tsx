@@ -7,9 +7,13 @@ import {
 import { Action } from "@atomic/design";
 
 export default async function Home() {
+  const env = Deno.env.get("GITHUB_CLIENT_ID");
+
   return (
     <div class="max-w-screen-md mx-auto flex flex-col">
-      <h1 class="text-4xl font-bold text-white mt-8">Welcome to SportsHub</h1>
+      <h1 class="text-4xl font-bold text-white mt-8">
+        Welcome to SportsHub
+      </h1>
       <p class="text-lg text-white mt-4">
         The ultimate platform for sports writers, players, and teams to share,
         collaborate, and discuss.

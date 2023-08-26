@@ -1,7 +1,6 @@
 import { AppProps } from "$fresh/server.ts";
 import { BasicLayout, Footer, Header } from "@atomic/design";
 import { getSessionAccessToken, getSessionId } from "@kv_oauth";
-import { gitHubOauth2Client } from "../src/kv_auth.ts";
 import { Action, classSet, ResponsiveSet } from "@atomic/design";
 import InteractiveResponsiveSet from "../islands/molecules/InteractiveResponsiveSet.tsx";
 
